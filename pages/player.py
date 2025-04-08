@@ -161,7 +161,7 @@ st.plotly_chart(fig, use_container_width=True)
 def player_vs_bowler(player_name):
     query = f"""
         SELECT bowler, SUM(runs_batter) AS runs, COUNT(*) AS balls_faced
-        FROM d public.eliveries
+        FROM public.deliveries d
         WHERE batter = '{player_name}'
         GROUP BY bowler
         ORDER BY runs DESC
